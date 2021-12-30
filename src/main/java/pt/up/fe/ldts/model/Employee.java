@@ -7,19 +7,28 @@ public class Employee extends Entity implements CervejaListener {
 
     private static int SCORE_WHEN_EATEN = 20;
 
-    public enum EmployeeState {
-        SCATTER,
+    public enum EmployeeName {
+        TONI,
+        ZE_CASTRO,
+        BALTAZAR,
+        MARIANA
+    }
+
+    public enum EmployeeState{
         FRIGHTENED,
+        SCATTER,
         CHASING,
         DEAD
     }
 
     private EmployeeAI ai;
+    private EmployeeName name;
     private EmployeeState state = EmployeeState.SCATTER;
 
-    public Employee(int x, int y, EmployeeAI ai) {
+    public Employee(int x, int y, EmployeeAI ai, EmployeeName name) {
         super(x, y);
         this.ai = ai;
+        this.name = name;
     }
 
     public EmployeeState getCurrentState() {

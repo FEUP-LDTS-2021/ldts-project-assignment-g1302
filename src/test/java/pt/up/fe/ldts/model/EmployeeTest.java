@@ -2,7 +2,6 @@ package pt.up.fe.ldts.model;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import pt.up.fe.ldts.model.employeeAI.EmployeeAI;
 
@@ -13,7 +12,7 @@ public class EmployeeTest {
     @Test
     public void testConstrction() {
 
-        Employee employee = new Employee(4, 5, null);
+        Employee employee = new Employee(4, 5, null, null);
 
         Assertions.assertEquals(4, employee.getX());
         Assertions.assertEquals(5, employee.getY());
@@ -34,7 +33,7 @@ public class EmployeeTest {
             return Entity.Direction.LEFT;
         });
 
-        employee = new Employee(4, 5, testAI);
+        employee = new Employee(4, 5, testAI, null);
 
         employee.changeDirection();
 

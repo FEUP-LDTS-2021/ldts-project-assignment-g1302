@@ -2,9 +2,11 @@ package pt.up.fe.ldts.model;
 
 public class Jorge extends Entity{
 
-    public Jorge(int x, int y) {
+    private Jorge(int x, int y) {
         super(x, y);
     }
+
+    public static Jorge jorge = new Jorge(4,5);
 
     @Override
     public void changeDirection() {
