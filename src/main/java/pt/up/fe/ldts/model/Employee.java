@@ -3,6 +3,9 @@ package pt.up.fe.ldts.model;
 import pt.up.fe.ldts.model.employeeAI.EmployeeAI;
 import pt.up.fe.ldts.model.employeeAI.FrightenedAI;
 
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+
 public class Employee extends Entity implements CervejaListener {
 
     private static int SCORE_WHEN_EATEN = 20;
@@ -51,8 +54,148 @@ public class Employee extends Entity implements CervejaListener {
         this.ai = currentAi;
     }
 
+
+    //refactor later
     @Override
     public void changeDirection() {
-        this.setDirection(this.ai.chooseTargetDirection(this.getCurrentState()));
+        double frontDistance, leftDistance, rightDistance;
+        int newX, newY;
+
+        Element.Position target = this.ai.chooseTarget(this.name);
+
+        //this doesn't account for walls
+
+        switch (this.getDirection()){
+            case UP -> {
+                //keep going same direction
+
+                newX = this.getX();
+                newY = this.getY()-1;
+
+                frontDistance = sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+                //turn left
+
+                newX = this.getX() -1;
+                newY = this.getY();
+
+                leftDistance =  sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+                //turn right
+
+                newX = this.getX() +1;
+                newY = this.getY();
+
+                rightDistance =  sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+                if(frontDistance < leftDistance){
+                    if (frontDistance > rightDistance)
+                        this.setDirection(Direction.RIGHT);
+                }
+                else {
+                    if (leftDistance < rightDistance)
+                        this.setDirection(Direction.LEFT);
+                    else
+                        this.setDirection(Direction.RIGHT);
+                }
+
+            }
+            case DOWN -> {
+
+
+                newX = this.getX();
+                newY = this.getY()+1;
+
+                frontDistance = sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+
+
+                newX = this.getX() +1;
+                newY = this.getY();
+
+                leftDistance =  sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+
+
+                newX = this.getX() -1;
+                newY = this.getY();
+
+                rightDistance =  sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+                if(frontDistance < leftDistance){
+                    if (frontDistance > rightDistance)
+                        this.setDirection(Direction.LEFT);
+                }
+                else {
+                    if (leftDistance < rightDistance)
+                        this.setDirection(Direction.RIGHT);
+                    else
+                        this.setDirection(Direction.LEFT);
+                }
+            }
+            case RIGHT -> {
+
+
+                newX = this.getX() + 1;
+                newY = this.getY();
+
+                frontDistance = sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+
+
+                newX = this.getX();
+                newY = this.getY() - 1;
+
+                leftDistance =  sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+
+
+                newX = this.getX();
+                newY = this.getY() + 1;
+
+                rightDistance =  sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+                if(frontDistance < leftDistance){
+                    if (frontDistance > rightDistance)
+                        this.setDirection(Direction.DOWN);
+                }
+                else {
+                    if (leftDistance < rightDistance)
+                        this.setDirection(Direction.UP);
+                    else
+                        this.setDirection(Direction.DOWN);
+                }
+            }
+            case LEFT -> {
+
+                newX = this.getX() - 1;
+                newY = this.getY();
+
+                frontDistance = sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+
+                newX = this.getX();
+                newY = this.getY() + 1;
+
+                leftDistance =  sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+
+                newX = this.getX();
+                newY = this.getY() - 1;
+
+                rightDistance =  sqrt(pow(target.getX() - newX , 2) + pow(target.getY() - newY, 2));
+
+                if(frontDistance < leftDistance){
+                    if (frontDistance > rightDistance)
+                        this.setDirection(Direction.UP);
+                }
+                else {
+                    if (leftDistance < rightDistance)
+                        this.setDirection(Direction.DOWN);
+                    else
+                        this.setDirection(Direction.UP);
+                }
+            }
+        }
     }
 }
