@@ -6,7 +6,7 @@ public class Jorge extends Entity{
 
     public static Jorge singleton = new Jorge(4, 5); // to be changed later
 
-    private AtomicInteger score = new AtomicInteger(0);
+    private final AtomicInteger score = new AtomicInteger(0);
 
     /**
      * Constructs a new Jorge on the given position
@@ -22,11 +22,11 @@ public class Jorge extends Entity{
         // change direction based on keystrokes
     }
 
-    public void addScore(int points) {
+    public synchronized void addScore(int points) {
         score.getAndAdd(points);
     }
 
-    public int getScore() {
+    public synchronized int getScore() {
         return score.get();
     }
 

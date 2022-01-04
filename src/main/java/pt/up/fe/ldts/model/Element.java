@@ -1,8 +1,11 @@
 package pt.up.fe.ldts.model;
 
+import pt.up.fe.ldts.view.sprites.Sprite;
+
 public abstract class Element {
 
     private Point position;
+    private Sprite sprite;
 
     /**
      * Constructs a new Element on the given position
@@ -10,8 +13,9 @@ public abstract class Element {
      * @param x the x coordinate of this entity
      * @param y the y coordinate of this entity
      */
-    public Element(int x, int y){
+    public Element(int x, int y, Sprite s){
         this.position = new Point(x,y);
+        this.sprite = s;
     }
 
     /**
@@ -36,5 +40,14 @@ public abstract class Element {
      */
     public int getY() {
         return this.getPosition().getY();
+    }
+
+    /**
+     * Returns the sprite used to render this element.
+     *
+     * @return the sprite used to render this element
+     */
+    public Sprite getSprite() {
+        return sprite;
     }
 }
