@@ -2,6 +2,7 @@ package pt.up.fe.ldts.view;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import pt.up.fe.ldts.model.Cerveja;
+import pt.up.fe.ldts.view.gui.GUI;
 
 public class CervejaViewer extends Viewer<Cerveja> {
 
@@ -10,7 +11,7 @@ public class CervejaViewer extends Viewer<Cerveja> {
     }
 
     @Override
-    public void render(TextGraphics graphics) {
+    public void render(GUI gui, TextGraphics graphics) {
 
     }
 }

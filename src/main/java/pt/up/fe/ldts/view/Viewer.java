@@ -2,6 +2,7 @@ package pt.up.fe.ldts.view;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import pt.up.fe.ldts.model.Element;
+import pt.up.fe.ldts.view.gui.GUI;
 
 public abstract class Viewer<T extends Element> {
 
@@ -15,5 +16,5 @@ public abstract class Viewer<T extends Element> {
         return this.model;
     }
 
-    public abstract void render(TextGraphics graphics);
+    public abstract void render(GUI gui, TextGraphics graphics);
 }
