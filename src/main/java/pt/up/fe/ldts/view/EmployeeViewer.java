@@ -12,7 +12,7 @@ public class EmployeeViewer extends Viewer<Employee> {
     }
 
     @Override
-    public void render(GUI gui, TextGraphics graphics) {
+    public void render(GUI gui) {
 
     }
 }

@@ -11,7 +11,7 @@ public class WallViewer extends Viewer<Wall> {
     }
 
     @Override
-    public void render(GUI gui, TextGraphics graphics) {
+    public void render(GUI gui) {
 
     }
 }

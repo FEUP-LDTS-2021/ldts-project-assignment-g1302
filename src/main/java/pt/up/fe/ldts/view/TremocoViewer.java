@@ -11,7 +11,7 @@ public class TremocoViewer extends Viewer<Tremoco> {
     }
 
     @Override
-    public void render(GUI gui, TextGraphics graphics) {
+    public void render(GUI gui) {
 
     }
 }

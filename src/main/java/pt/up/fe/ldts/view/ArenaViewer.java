@@ -11,7 +11,7 @@ public class ArenaViewer extends Viewer<Arena> {
     }
 
     @Override
-    public void render(GUI gui, TextGraphics graphics) {
+    public void render(GUI gui) {
 
     }
 }

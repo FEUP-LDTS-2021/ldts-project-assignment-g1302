@@ -11,7 +11,7 @@ public class CervejaViewer extends Viewer<Cerveja> {
     }
 
     @Override
-    public void render(GUI gui, TextGraphics graphics) {
+    public void render(GUI gui) {
 
     }
 }

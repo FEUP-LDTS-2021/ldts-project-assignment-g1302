@@ -15,5 +15,5 @@ public abstract class Viewer<T extends Drawable> {
         return this.model;
     }
 
-    public abstract void render(GUI gui, TextGraphics graphics);
+    public abstract void render(GUI gui);
 }
