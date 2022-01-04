@@ -3,6 +3,7 @@ package pt.up.fe.ldts.model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+import pt.up.fe.ldts.view.sprites.Sprite;
 
 public class EntityTest {
 
@@ -11,6 +12,11 @@ public class EntityTest {
     @BeforeEach
     public void setup(){
         entity = new Entity(4, 5) {
+            @Override
+            protected Sprite loadSprite() {
+                return null;
+            }
+
             @Override
             public void changeDirection() {
 

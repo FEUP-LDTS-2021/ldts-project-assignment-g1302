@@ -10,11 +10,13 @@ import java.io.Serializable;
 public abstract class Drawable {
     protected Sprite s;
 
-    protected Drawable(Sprite s){
-        this.s = s;
+    protected Drawable(){
+        this.s = this.loadSprite();
     }
 
     public Sprite getSprite() {
         return this.s;
     }
+
+    protected abstract Sprite loadSprite();
 }

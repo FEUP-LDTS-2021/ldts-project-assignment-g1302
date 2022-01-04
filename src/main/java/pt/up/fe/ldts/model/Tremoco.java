@@ -1,5 +1,7 @@
 package pt.up.fe.ldts.model;
 
+import pt.up.fe.ldts.view.sprites.Sprite;
+
 public class Tremoco extends Collectible {
 
     static {
@@ -20,5 +22,10 @@ public class Tremoco extends Collectible {
 
         //TODO: when that is implemented, add score to Jorge
 
+    }
+
+    @Override
+    protected Sprite loadSprite() {
+        return null;
     }
 }

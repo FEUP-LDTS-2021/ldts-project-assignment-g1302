@@ -5,15 +5,15 @@ import pt.up.fe.ldts.view.sprites.Sprite;
 
 public abstract class Element extends Drawable {
 
-    private Point position;
+    private final Point position;
+
     /**
      * Constructs a new Element on the given position
      *
      * @param x the x coordinate of this entity
      * @param y the y coordinate of this entity
      */
-    public Element(int x, int y, Sprite s){
-        super(s);
+    public Element(int x, int y){
         this.position = new Point(x,y);
     }
 

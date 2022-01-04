@@ -1,5 +1,7 @@
 package pt.up.fe.ldts.model;
 
+import pt.up.fe.ldts.view.sprites.Sprite;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Jorge extends Entity{
@@ -30,4 +32,8 @@ public class Jorge extends Entity{
         return score.get();
     }
 
+    @Override
+    protected Sprite loadSprite() {
+        return null;
+    }
 }

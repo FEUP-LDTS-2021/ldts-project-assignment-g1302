@@ -11,17 +11,12 @@ public class Arena extends Drawable {
     private int width;
     private int height;
 
-    private static Sprite getArenaSprite() {
-        return null;
-    }
-
     /**
      * Constructor
      * @param width horizontal size of the game arena
      * @param height vertical size of the game arena
      */
-    public Arena(int width, int height){
-        super(Arena.getArenaSprite());
+    public Arena(int width, int height) {
         setWidth(width);
         setHeight(height);
     }
@@ -56,5 +51,10 @@ public class Arena extends Drawable {
      */
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    @Override
+    protected Sprite loadSprite() {
+        return null;
     }
 }
