@@ -11,7 +11,7 @@ public interface GUI {
 
     void drawWall(Point point);
 
-    void drawEmployee(Point point);
+    void drawEmployee(Point point, String color);
 
     void drawText(Point point, String text, String color);
 

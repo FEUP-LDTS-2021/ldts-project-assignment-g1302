@@ -84,17 +84,17 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawJorge() {
-        drawCharacter(Jorge.singleton.getPosition().getX(), Jorge.singleton.getPosition().getY(), 'H', "#FFD700");
+        drawCharacter(Jorge.singleton.getPosition().getX(), Jorge.singleton.getPosition().getY(), 'J', TextColor.ANSI.YELLOW.name());
     }
 
     @Override
     public void drawWall(Point position) {
-        drawCharacter(position.getX(), position.getY(), '#', "#3333FF");
+        drawCharacter(position.getX(), position.getY(), '#', "#bdb76b");
     }
 
     @Override
-    public void drawEmployee(Point position) {
-        drawCharacter(position.getX(), position.getY(), '@', "#CC0000");
+    public void drawEmployee(Point position, String color) {
+        drawCharacter(position.getX(), position.getY(), '@', color);
     }
 
     @Override
