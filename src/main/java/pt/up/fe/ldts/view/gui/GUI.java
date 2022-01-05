@@ -1,5 +1,6 @@
 package pt.up.fe.ldts.view.gui;
 
+import pt.up.fe.ldts.model.Element;
 import pt.up.fe.ldts.model.Point;
 
 import java.io.IOException;
@@ -14,6 +15,14 @@ public interface GUI {
     void drawEmployee(Point point, String color);
 
     void drawText(Point point, String text, String color);
+
+    void drawTremoco(Point point);
+
+    void drawCerveja(Point point);
+
+    void drawElement(Element element);
+
+    void drawCharacter(int x, int y, char c, String color);
 
     void clear();
 

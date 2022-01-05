@@ -4,7 +4,10 @@ import pt.up.fe.ldts.view.Drawable;
 import pt.up.fe.ldts.view.sprites.Sprite;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Class to handle visual elements of the game (mainly the game arena, the surface where every element is placed)
@@ -16,15 +19,27 @@ public class Arena extends Drawable {
 
     List<Employee> employees;
     List<Wall> walls;
-    List<Tremoco> tremocos;
     List<Cerveja> cervejas;
+    List<Tremoco> tremocos;
 
     public List<Employee> getEmployees() {
         return this.employees;
     }
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
     public List<Wall> getWalls() { return this.walls; }
-    public List<Tremoco> getTremocos() { return tremocos; }
+    public void setWalls(List<Wall> walls) {
+        this.walls = walls;
+    }
     public List<Cerveja> getCervejas() { return cervejas; }
+    public void setCervejas(List<Cerveja> cervejas) {
+        this.cervejas = cervejas;
+    }
+    public List<Tremoco> getTremocos() { return tremocos; }
+    public void setTremocos(List<Tremoco> tremocos) {
+        this.tremocos = tremocos;
+    }
 
     /**
      * Constructor
@@ -74,6 +89,6 @@ public class Arena extends Drawable {
 
     @Override
     protected Sprite loadSprite() {
-        return null;
+        return null; // the arena is going to be drawn differently
     }
 }

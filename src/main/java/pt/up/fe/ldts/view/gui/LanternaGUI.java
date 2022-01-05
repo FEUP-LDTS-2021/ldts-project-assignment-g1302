@@ -10,8 +10,10 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import pt.up.fe.ldts.model.Element;
 import pt.up.fe.ldts.model.Jorge;
 import pt.up.fe.ldts.model.Point;
+import pt.up.fe.ldts.view.sprites.Sprite;
 
 import java.awt.*;
 import java.io.File;
@@ -98,13 +100,29 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
+    public void drawTremoco(Point point) {
+        drawCharacter(point.getX(), point.getY(), 'o', "#2323b4");
+    }
+
+    @Override
+    public void drawCerveja(Point point) {
+        drawCharacter(point.getX(), point.getY(), 'I', "#2323b4");
+    }
+
+    @Override
     public void drawText(Point position, String text, String color) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
         tg.putString(position.getX(), position.getY(), text);
     }
 
-    private void drawCharacter(int x, int y, char c, String color) {
+    @Override
+    public void drawElement(Element element) {
+        element.getSprite().render(this, element.getPosition());
+    }
+
+    @Override
+    public void drawCharacter(int x, int y, char c, String color) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
         tg.putString(x, y + 1, "" + c);
