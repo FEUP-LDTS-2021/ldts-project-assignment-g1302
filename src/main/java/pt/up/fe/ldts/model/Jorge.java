@@ -2,6 +2,7 @@ package pt.up.fe.ldts.model;
 
 import pt.up.fe.ldts.view.sprites.Sprite;
 
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Jorge extends Entity{
@@ -34,6 +35,6 @@ public class Jorge extends Entity{
 
     @Override
     protected Sprite loadSprite() {
-        return null;
+        return new Sprite(1, 1, Arrays.asList('J'));
     }
 }

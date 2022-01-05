@@ -4,7 +4,9 @@ import com.github.javaparser.utils.Pair;
 import pt.up.fe.ldts.controller.employeeAI.EmployeeAI;
 import pt.up.fe.ldts.view.sprites.Sprite;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Employee extends Entity implements CervejaListener {
@@ -13,7 +15,7 @@ public class Employee extends Entity implements CervejaListener {
 
     @Override
     protected Sprite loadSprite() {
-        return null;
+        return new Sprite(1, 1, Arrays.asList('E'));
     }
 
     public enum EmployeeState {

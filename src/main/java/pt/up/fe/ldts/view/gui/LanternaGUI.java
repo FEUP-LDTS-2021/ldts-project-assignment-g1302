@@ -118,7 +118,11 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawElement(Element element) {
-        element.getSprite().render(this, element.getPosition());
+
+        Sprite elementSprite = element.getSprite();
+
+        if (elementSprite != null)
+            elementSprite.render(this, element.getPosition());
     }
 
     @Override

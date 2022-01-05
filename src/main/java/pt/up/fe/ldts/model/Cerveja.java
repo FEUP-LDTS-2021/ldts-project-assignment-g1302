@@ -3,6 +3,7 @@ package pt.up.fe.ldts.model;
 import pt.up.fe.ldts.view.sprites.Sprite;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Cerveja extends Collectible {
@@ -36,6 +37,6 @@ public class Cerveja extends Collectible {
 
     @Override
     protected Sprite loadSprite() {
-        return null;
+        return new Sprite(1, 1, Arrays.asList('I'));
     }
 }

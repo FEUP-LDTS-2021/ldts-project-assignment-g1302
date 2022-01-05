@@ -2,6 +2,8 @@ package pt.up.fe.ldts.model;
 
 import pt.up.fe.ldts.view.sprites.Sprite;
 
+import java.util.Arrays;
+
 /**
  * Class to represent walls (elements that serve as impassable positions for entities)
  */
@@ -19,6 +21,6 @@ public class Wall extends Element {
 
     @Override
     protected Sprite loadSprite() {
-        return null;
+        return new Sprite(1, 1, Arrays.asList('W'));
     }
 }

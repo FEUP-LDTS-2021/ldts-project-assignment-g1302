@@ -2,6 +2,8 @@ package pt.up.fe.ldts.model;
 
 import pt.up.fe.ldts.view.sprites.Sprite;
 
+import java.util.Arrays;
+
 public class Tremoco extends Collectible {
 
     static {
@@ -26,6 +28,6 @@ public class Tremoco extends Collectible {
 
     @Override
     protected Sprite loadSprite() {
-        return null;
+        return new Sprite(1, 1 , Arrays.asList('o'));
     }
 }
