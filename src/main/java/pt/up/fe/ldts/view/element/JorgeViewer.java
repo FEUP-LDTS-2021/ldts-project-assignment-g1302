@@ -1,6 +1,5 @@
-package pt.up.fe.ldts.view;
+package pt.up.fe.ldts.view.element;
 
-import pt.up.fe.ldts.model.Element;
 import pt.up.fe.ldts.model.Jorge;
 import pt.up.fe.ldts.model.Point;
 import pt.up.fe.ldts.view.gui.GUI;

@@ -1,4 +1,4 @@
-package pt.up.fe.ldts.view;
+package pt.up.fe.ldts.view.element;
 
 import pt.up.fe.ldts.model.Wall;
 import pt.up.fe.ldts.view.gui.GUI;

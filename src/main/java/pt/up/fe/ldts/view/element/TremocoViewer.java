@@ -1,9 +1,7 @@
-package pt.up.fe.ldts.view;
+package pt.up.fe.ldts.view.element;
 
 import pt.up.fe.ldts.model.Tremoco;
 import pt.up.fe.ldts.view.gui.GUI;
-
-import javax.swing.text.Element;
 
 public class TremocoViewer implements ElementViewer<Tremoco> {
 

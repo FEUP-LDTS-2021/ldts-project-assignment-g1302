@@ -1,8 +1,10 @@
-package pt.up.fe.ldts.view;
+package pt.up.fe.ldts.view.element;
 
 import pt.up.fe.ldts.model.Arena;
 import pt.up.fe.ldts.model.Element;
 import pt.up.fe.ldts.model.Jorge;
+import pt.up.fe.ldts.view.Viewer;
+import pt.up.fe.ldts.view.element.*;
 import pt.up.fe.ldts.view.gui.GUI;
 
 import java.util.List;
