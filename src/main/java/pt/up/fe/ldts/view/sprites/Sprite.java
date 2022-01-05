@@ -1,6 +1,6 @@
 package pt.up.fe.ldts.view.sprites;
 
-import com.googlecode.lanterna.graphics.TextGraphics;
+import pt.up.fe.ldts.view.gui.GUI;
 
 import java.io.File;
 import java.net.URI;
@@ -15,6 +15,6 @@ public abstract class Sprite {
     public abstract void load(URI resourceURI);
     public abstract void load(File resourceFile);
 
-    public abstract void render(TextGraphics tg);
+    public abstract void render(GUI gui);
 
 }

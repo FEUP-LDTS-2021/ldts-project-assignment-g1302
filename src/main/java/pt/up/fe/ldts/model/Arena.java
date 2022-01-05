@@ -3,6 +3,9 @@ package pt.up.fe.ldts.model;
 import pt.up.fe.ldts.view.Drawable;
 import pt.up.fe.ldts.view.sprites.Sprite;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Class to handle visual elements of the game (mainly the game arena, the surface where every element is placed)
  */
@@ -10,6 +13,18 @@ public class Arena extends Drawable {
 
     private int width;
     private int height;
+
+    List<Employee> employees;
+    List<Wall> walls;
+    List<Tremoco> tremocos;
+    List<Cerveja> cervejas;
+
+    public List<Employee> getEmployees() {
+        return this.employees;
+    }
+    public List<Wall> getWalls() { return this.walls; }
+    public List<Tremoco> getTremocos() { return tremocos; }
+    public List<Cerveja> getCervejas() { return cervejas; }
 
     /**
      * Constructor
@@ -19,6 +34,10 @@ public class Arena extends Drawable {
     public Arena(int width, int height) {
         setWidth(width);
         setHeight(height);
+        this.employees = new ArrayList<>(4);
+        this.walls = new ArrayList<>();
+        this.cervejas = new ArrayList<>();
+        this.tremocos = new ArrayList<>();
     }
 
     /**

@@ -1,17 +1,14 @@
 package pt.up.fe.ldts.view;
 
-import com.googlecode.lanterna.graphics.TextGraphics;
 import pt.up.fe.ldts.model.Tremoco;
 import pt.up.fe.ldts.view.gui.GUI;
 
-public class TremocoViewer extends Viewer<Tremoco> {
+import javax.swing.text.Element;
 
-    public TremocoViewer(Tremoco model) {
-        super(model);
-    }
+public class TremocoViewer implements ElementViewer<Tremoco> {
 
     @Override
-    public void render(GUI gui) {
+    public void render(Tremoco element, GUI gui) {
 
     }
 }
