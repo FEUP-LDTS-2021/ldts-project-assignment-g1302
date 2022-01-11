@@ -27,4 +27,5 @@ test {
 pitest {
     junit5PluginVersion = '0.15'
     pitestVersion = '1.6.7'
+
 }
