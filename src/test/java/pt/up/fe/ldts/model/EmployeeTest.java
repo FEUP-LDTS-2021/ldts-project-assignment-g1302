@@ -4,8 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import pt.up.fe.ldts.controller.employeeAI.EmployeeAI;
+import pt.up.fe.ldts.controller.employeeAI.ToniAI;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -15,9 +17,6 @@ public class EmployeeTest {
     public void testConstruction() {
 
         Employee employee = new Employee(4, 5, null);
-
-        Assertions.assertEquals(4, employee.getX());
-        Assertions.assertEquals(5, employee.getY());
 
         Assertions.assertEquals(Employee.EmployeeState.SCATTER, employee.getCurrentState());
     }
@@ -43,6 +42,41 @@ public class EmployeeTest {
             directions.add(Vector.DOWN);
         }
         return directions;
+    }
+
+    @Test
+    public void testInsideBox(){
+        Employee employee = new Employee(13, 13, new ToniAI()); // ai doesn't matter here
+        employee.setDirection(Vector.DOWN);
+
+        Set<Vector> everyDir = new HashSet<>();
+        everyDir.add(Vector.UP);
+        everyDir.add(Vector.DOWN);
+        everyDir.add(Vector.LEFT);
+        everyDir.add(Vector.RIGHT);
+        Arena arena = Mockito.mock(Arena.class);
+        Mockito.when(arena.getValidDirections(Mockito.any(), Mockito.any(), Mockito.anyBoolean())).thenReturn(everyDir);
+        employee.changeDirection(arena);
+
+        Assertions.assertEquals(Vector.UP, employee.getDirection());
+    }
+
+    @Test
+    public void testCervejaPicked() {
+        Employee employee = new Employee(13, 13, new ToniAI()); // ai doesn't matter here
+
+        employee.cervejaPicked();
+
+        Assertions.assertEquals(Vector.DOWN, employee.getDirection());
+    }
+
+    @Test
+    public void testStates() {
+
+        Employee employee = new Employee(4, 5, null);
+        employee.setCurrentState(Employee.EmployeeState.DEAD);
+
+        Assertions.assertEquals(Employee.EmployeeState.DEAD, employee.getCurrentState());
     }
 
     @Test
